@@ -15,3 +15,16 @@
     width: 60px !important;
     height: 60px !important;
 }
+
+.containerPages{
+    background-color: #e6eaef;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1.5em;
+    background-color: #ffff;
+    height: 10vh;
+}

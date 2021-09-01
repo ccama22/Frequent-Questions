@@ -4,10 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { TweenOneGroup } from 'rc-tween-one';
 
-//TODO
-// agregar Search
-// agregar modal para eliminar
-
 const FormPage = ({isModalVisible, handleOk, handleCancel, currentPage, createOrEditNewPage}) => {
     const [form] = Form.useForm();
     const [inputValue, setInputValue] = useState('');
@@ -77,13 +73,13 @@ const FormPage = ({isModalVisible, handleOk, handleCancel, currentPage, createOr
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-            <Button key="back" onClick={() => handleCancel}>
+            <Button key="back" onClick={() => handleCancel()}>
                 Cancelar
             </Button>,
             <Button htmlType="submit" key="submit" type="primary" onClick={savePage}>
                 Aceptar
             </Button>,
-          ]}
+        ]}
     >
         <h3 className='titleform'>{
             isNewPage 
