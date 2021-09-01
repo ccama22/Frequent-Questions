@@ -1,0 +1,49 @@
+
+.titlePage{
+    color:#39A1E7;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.description{
+    height: 40%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #b2b5bd;
+    margin-bottom: 2em;
+}
+
+.titleform{
+    color:#333333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.tag{
+    color:#364f6b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.ant-card{
+    margin: 1em;
+}
+
+.ant-card-body{
+    height: 100%;
+}
+
+.container-icons{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+}
+
+.container-tags{
+    height: 50px;
+}

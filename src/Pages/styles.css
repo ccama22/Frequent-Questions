@@ -1,0 +1,17 @@
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.ant-affix{
+    left: 2em !important;
+    bottom: 2em !important;
+}
+
+.ant-btn-icon-only.ant-btn-lg{
+    width: 60px !important;
+    height: 60px !important;
+}
