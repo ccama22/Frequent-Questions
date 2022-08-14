@@ -1,5 +1,6 @@
 import { Modal, Button } from 'antd';
 import PropTypes from 'prop-types';
+import React from "react";
 
 const DeleteModal = ({isModalVisible, handleOk, handleCancel, page, deletePage}) => {
 

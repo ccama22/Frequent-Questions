@@ -2,17 +2,21 @@ import { Card, Tag } from 'antd';
 import PropTypes from 'prop-types';
 import './styles.css'
 import { DeleteTwoTone, EditOutlined } from '@ant-design/icons';
+import React, { useContext } from "react";
+import { ThemeContext } from '../../../../context/ThemeContext';
 
-const CardNote  = ({page, edit, setCurrentPage, remove, valueSearch }) => {
+const CardNote  = ({page, edit, setCurrentNote, remove, valueSearch }) => {
+
+    const {currentTheme} = useContext(ThemeContext);
 
     const selectAPage = () => {
         edit(true);
-        setCurrentPage(page)
+        setCurrentNote(page)
     }
 
     const removePage = () => {
         remove(true);
-        setCurrentPage(page)
+        setCurrentNote(page)
     }
 
     return (
@@ -46,7 +50,7 @@ CardNote.prototype = {
     page: PropTypes.object.isRequired,
     edit: PropTypes.func,
     remove: PropTypes.func,
-    setCurrentPage: PropTypes.func,
+    setCurrentNote: PropTypes.func,
     valueSearch: PropTypes.string,
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CardNote from "./components/CardNote";
-import { getPages } from "../services";
+
+import { getPages } from "../../services";
 import FormPage from "./components/FormPage";
 import { Affix, Button, Input, Switch } from 'antd';
 import { PlusOutlined, SortAscendingOutlined } from '@ant-design/icons';
@@ -9,7 +10,7 @@ import DeleteModal from "./components/DeleteModal";
 
 const { Search } = Input;
 
-const Pages = () => {
+const ListNotes = () => {
 
     const newPage = {
         title: '',
@@ -19,7 +20,7 @@ const Pages = () => {
     }
 
     const [pages, setPages] = useState([])
-    const [currentPage, setCurrentPage] = useState(newPage);
+    const [currentNote, setCurrentNote] = useState(newPage);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalDeleteIsVisible, setIsModalDeleteIsVisible] = useState(false);
     const [valueSearch, setValueSearch] = useState('');
@@ -27,6 +28,7 @@ const Pages = () => {
 
 
     useEffect(() => {
+        // debugger;
         if(valueSearch.includes('#')) {
             const searchValue = valueSearch.replace('#', '');
             const filterByTags = pages.filter(page => page.tags.find(tag => tag === searchValue));
@@ -80,12 +82,12 @@ const Pages = () => {
     }
     
     const handleCancel = () => {
-        setCurrentPage(newPage);
+        setCurrentNote(newPage);
         setIsModalVisible(false);
     };
 
     const handleCancelModalDelete = () => {
-        setCurrentPage(newPage);
+        setCurrentNote(newPage);
         setIsModalDeleteIsVisible(false);
     };
 
@@ -112,8 +114,8 @@ const Pages = () => {
         }
     }
 
-    const deletePage = (currentPage) => {
-        const newPages = [...pages].filter(page => page.id !== currentPage.id);
+    const deletePage = (currentNote) => {
+        const newPages = [...pages].filter(page => page.id !== currentNote.id);
         setFilterData(newPages);
         setPages(newPages);
     }
@@ -139,7 +141,7 @@ const Pages = () => {
                             <CardNote
                                 key={page.id}
                                 page={page}
-                                setCurrentPage={setCurrentPage}
+                                setCurrentNote={setCurrentNote}
                                 edit={setIsModalVisible}
                                 remove={setIsModalDeleteIsVisible}
                                 valueSearch={valueSearch}
@@ -151,7 +153,7 @@ const Pages = () => {
             {   modalDeleteIsVisible &&
                 <DeleteModal
                     isModalVisible={modalDeleteIsVisible}
-                    page={currentPage}
+                    page={currentNote}
                     handleOk={handleOkModalDeletePage}
                     handleCancel={handleCancelModalDelete}
                     deletePage={deletePage}
@@ -163,7 +165,7 @@ const Pages = () => {
                     isModalVisible={isModalVisible}
                     handleOk={handleOk}
                     handleCancel={handleCancel}
-                    currentPage={currentPage}
+                    currentNote={currentNote}
                     createOrEditNewPage={createOrEditNewPage}
                 ></FormPage>
             }
@@ -179,4 +181,4 @@ const Pages = () => {
     )
 }
 
-export default Pages;
+export default ListNotes;

@@ -3,25 +3,37 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { TweenOneGroup } from 'rc-tween-one';
+import React from "react";
+import { getPages } from '../../../../services';
 
-const FormPage = ({isModalVisible, handleOk, handleCancel, currentPage, createOrEditNewPage}) => {
+const FormPage = ({isModalVisible, handleOk, handleCancel, currentNote, createOrEditNewPage}) => {
     const [form] = Form.useForm();
     const [inputValue, setInputValue] = useState('');
     const [inputVisible, setInputVisible] = useState(false);
-    const [tags, setTags] = useState(currentPage.tags);
-    const [isNewPage, setIsNewPage] = useState(true);;
+    const [tags, setTags] = useState(currentNote.tags);
+    const [isNewPage, setIsNewPage] = useState(true);
+    const [pages, setPages] = useState([])
+
     let input = useRef(null);
 
     const savePage = () => form.validateFields().then(values => {
-        createOrEditNewPage({...currentPage, ...values, tags})
+        createOrEditNewPage({...currentNote, ...values, tags})
         handleOk()
     })
 
     useEffect(() => {
-        if(!!currentPage.id){
+        if(!!currentNote.id){
             setIsNewPage(false)
+            getAllPages();
         }
     }, []);
+
+    const getAllPages = async() => {
+        const response = await getPages();
+        if (response) {
+            setPages(response);
+        }
+    }
 
     const forMap = tag => {
         const tagElem = (
@@ -86,14 +98,18 @@ const FormPage = ({isModalVisible, handleOk, handleCancel, currentPage, createOr
             ? 'Agregar nueva Página'
             : 'Editar página'
         }</h3>
+        {
+            !!currentNote.id &&
+            <p>esta es la nota {currentNote.id} de {pages.length}</p>
+        }
         <br />
         <Form
             form={form}
             layout="vertical"
             initialValues={{
-                    title: currentPage.title,
-                    description: currentPage.description,
-                    link: currentPage.link
+                    title: currentNote.title,
+                    description: currentNote.description,
+                    link: currentNote.link
                 }}
             >
             <Form.Item 
@@ -101,7 +117,7 @@ const FormPage = ({isModalVisible, handleOk, handleCancel, currentPage, createOr
                 required
                 name="title"
             >
-                <Input disabled={!!currentPage.title} placeholder="Escriba el titulo" />
+                <Input disabled={!!currentNote.title} placeholder="Escriba el titulo" />
             </Form.Item>
             <Form.Item
                 label="Link"
@@ -166,7 +182,7 @@ FormPage.prototype = {
     isModalVisible: PropTypes.bool.isRequired,
     handleOk: PropTypes.func,
     handleCancel: PropTypes.func,
-    currentPage: PropTypes.object,
+    currentNote: PropTypes.object,
     createOrEditNewPage: PropTypes.func,
 }
 
