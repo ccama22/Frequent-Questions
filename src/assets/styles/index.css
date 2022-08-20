@@ -1,0 +1,205 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  --clr-white: #fff;
+  --clr-red-special: #b4345c;
+  --clr-grey-special: #eae6eb;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 70%;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: url('../img/fondo.png');
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+.banner{
+  min-height: 29rem;
+  background-size:65% 100%;
+  background-color:#ffecf3;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/bannerUnamad2.png");
+}
+@media screen and (max-width: 1024px) {
+  .banner {
+    min-height: 29rem;
+    background-size:80% 100%;
+    background-color:#ffecf3;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/bannerUnamad2.png");
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 25rem;
+    background-size:90% 87%;
+    background-color:#ffecf3;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/bannerUnamad2.png");
+  }
+}
+@media screen and (max-width: 480px) {
+  .banner {
+    min-height: 18rem;
+    background-size:90% 82%;
+    background-color:#ffecf3;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/bannerUnamad2.png");
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .banner {
+    min-height: 15rem;
+    background-size:90% 80%;
+    background-color:#ffecf3;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/bannerUnamad2.png");
+  }
+}
+.container {
+  width: 90vw;
+  margin: 1rem auto;
+
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  max-width: var(--fixed-width);
+}
+.container h3 {
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+}
+.question {
+  padding: 1rem 1.5rem;
+  margin-top: 33px;
+  border: 2px solid var(--clr-grey-special);
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+}
+.question h4 {
+  text-transform: none;
+  line-height: 1.5;
+}
+.question p {
+  color: var(--clr-grey-3);
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+.question header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question header h4 {
+  margin-bottom: 0;
+}
+.btn {
+  background: transparent;
+  border-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  background: var(--clr-grey-special);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--clr-red-special);
+  cursor: pointer;
+  margin-left: 1rem;
+  align-self: center;
+  min-width: 2rem;
+}
+
+img {
+  max-width: 100%;
+
+}

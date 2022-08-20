@@ -1,3 +1,25 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    --clr-white: #fff;
+    --clr-red-special: #b4345c;
+    --clr-grey-special: #eae6eb;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 70%;
+  }
+
 .containerCards{
     display: flex;
     flex-wrap: wrap;
@@ -17,14 +39,81 @@
 }
 
 .containerPages{
-    background-color: #e6eaef;
+    background-color: white;
 }
 
-header{
+.header-search{
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1.5em;
-    background-color: #ffff;
     height: 10vh;
+    background-color: #db0455;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
+
+.container-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 190%;
+}
+.container {
+    width: 90vw !important;
+    margin: 0px auto !important;
+  
+    border-radius: var(--radius) !important;
+    padding: 1rem 2rem !important;
+    max-width: var(--fixed-width) !important;
+}
+.question {
+    padding: 1rem 1.5rem !important;
+    /* margin-top: 33px !important; */
+    border: 2px solid var(--clr-grey-special) !important;
+    /* margin-bottom: 1rem !important; */
+    border-radius: var(--radius) !important;
+    box-shadow: var(--light-shadow) !important;
+    background-color: var(--clr-grey-3) !important;
+    cursor: pointer;
+  }
+  .question h4 {
+    text-transform: none !important;
+    line-height: 1.5 !important;
+  }
+  .question p {
+    color: var(--clr-grey-3) !important;
+    margin-bottom: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+  .question header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .question header h4 {
+    margin-bottom: 0 !important;
+  }
+  .btn {
+    background: transparent !important;
+    border-color: transparent !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    background: var(--clr-grey-special) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    color: var(--clr-red-special) !important;
+    cursor: pointer !important;
+    margin-left: 1rem !important;
+    align-self: center !important;
+    min-width: 2rem !important;
+  }
+
+
+  .error-container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
