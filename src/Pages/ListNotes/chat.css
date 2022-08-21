@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
   .bot {
-    top: 90px;
+    top: 79px;
     bottom: 0;
     right : 5px;
     position: fixed;
