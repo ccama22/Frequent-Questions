@@ -58,9 +58,9 @@
     background-color: #049af1;
     display: inline;
     right: 10px;
-    top: 400px;
+    top: 630px;
     /* bottom: 197px; */
-    position: sticky;
+    position: fixed;
     margin-bottom: 130px;
 
   }
