@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
   .bot {
-    top: 30px;
+    top: 90px;
     bottom: 0;
     right : 5px;
     position: fixed;
@@ -59,7 +59,9 @@
     display: inline;
     right: 10px;
     top: 400px;
-    bottom: 17px;
+    /* bottom: 197px; */
     position: sticky;
+    margin-bottom: 130px;
+
   }
 }
