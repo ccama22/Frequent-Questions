@@ -3,7 +3,7 @@ import CardNote from "./components/CardNote";
 
 import { getPages } from "../../services";
 import { Affix, Button, Input, Switch } from "antd";
-import logoUNAMAD from "../../assets/img/logoUNAMAD.png"
+import logoUNAMAD from "../../assets/img/logoUNAMAD.png";
 import {
   PlusOutlined,
   SortAscendingOutlined,
@@ -104,7 +104,7 @@ const ListNotes = () => {
   return (
     <div className="containerPages">
       <header className="header-search">
-      <img src={logoUNAMAD} width="50px"/>
+        <img src={logoUNAMAD} width="50px" />
         <Search
           placeholder="Buscar Pregunta"
           allowClear
@@ -176,6 +176,12 @@ const ListNotes = () => {
             </Affix>
           )}
         </div>
+      </div>
+      <div className="container-footer">
+        <p>
+          © 2022 Universidad Nacional Amazonica de Madre de Dios - Oficina de
+          tecnologia de Información - portalweb@unamad.edu.pe
+        </p>
       </div>
     </div>
   );

@@ -117,3 +117,15 @@ Variables
     align-items: center;
     justify-content: center;
   }
+  .container-footer{
+    margin-top: 20px;
+    left:0px;
+    right: 0px;
+    background-color: black;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    font-size: 17px;
+  }
