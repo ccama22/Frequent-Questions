@@ -42,6 +42,20 @@
   color: beige;
 }
 
-@media (min-width: 768px) {
-
+@media (max-width: 768px) {
+  .bot {
+    bottom: 0;
+    right : 5px;
+    position: fixed;
+    margin-bottom: 245px;
+    width: 350px;
+  }
+  .ant-btn-primary{
+    background-color: #049af1;
+    background-color: #049af1;
+    display: inline;
+    right: 10px;
+    bottom: 169px;
+    position: fixed;
+  }
 }
