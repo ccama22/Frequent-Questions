@@ -118,14 +118,7 @@ const ListNotes = () => {
       </header>
 
       <div style={{ margin: "auto" }}>
-        {filterData.length === 0 ? (
-          <div className="error-container">
-            <div className="error-search">
-              <img src={image} width={"400px"} alt="ccama" />
-              <p className="error-title">Error en busqueda</p>
-            </div>
-          </div>
-        ) : (
+        {filterData.length !== 0 ? (
           <div>
             <h3 className="container-title">Preguntas frecuentes</h3>
             <section className="container">
@@ -140,6 +133,13 @@ const ListNotes = () => {
                 );
               })}
             </section>
+          </div>
+        ) : (
+          <div className="error-container">
+            <div className="error-search">
+              <img src={image} width={"400px"} alt="ccama" />
+              <p className="error-title">Error en busqueda</p>
+            </div>
           </div>
         )}
       </div>
