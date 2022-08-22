@@ -61,10 +61,12 @@ Variables
 .container {
     width: 90vw !important;
     margin: 0px auto !important;
+    height: 100vh;
   
     border-radius: var(--radius) !important;
     padding: 1rem 2rem !important;
     max-width: var(--fixed-width) !important;
+    /* background-color: yellowgreen; */
 }
 .question {
     padding: 1rem 1.5rem !important;
@@ -112,10 +114,11 @@ Variables
 
 
   .error-container{
-    height: 70vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: aqua; */
   }
   .container-footer{
     margin-top: 20px;
@@ -128,4 +131,9 @@ Variables
     padding-top: 30px;
     color: #fff;
     font-size: 17px;
+  }
+  .error-title{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
   }

@@ -13,7 +13,7 @@ import {
 import "./styles.css";
 import "./chat.css";
 import SingleQuestion from "./Question";
-import image from "../../assets/img/signoInterrogacion.png";
+import image from "../../assets/img/ErrorBusqued.png";
 import Contenido from "../../Pages/ListNotes/components/Contenido/Contenido";
 
 const { Search } = Input;
@@ -121,8 +121,8 @@ const ListNotes = () => {
         {filterData.length === 0 ? (
           <div className="error-container">
             <div className="error-search">
-              <img src={image} width={"100px"} alt="ccama" />
-              <p>Error en busqueda</p>
+              <img src={image} width={"400px"} alt="ccama" />
+              <p className="error-title">Error en busqueda</p>
             </div>
           </div>
         ) : (

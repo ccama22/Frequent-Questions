@@ -5,7 +5,7 @@ import WikipediaSearch from "../WikipediaSearch/WikipediaSearch";
 import botUnamad from "../../../../assets/img/unamad.jpg";
 const theme = {
   background: "#f5f8fb",
-  headerBgColor: '#049af1',
+  headerBgColor: "#049af1",
   headerFontColor: "#ffffff",
   headerFontSize: "20px",
   botBubbleColor: "#dde2e2",
@@ -44,7 +44,8 @@ export default class Contenido extends Component {
             },
             {
               id: "3",
-              message: "Hola {previousValue}, ¡encantado de conocerte!",
+              message: `Hola {previousValue}👏
+              , Bienvenido A la Direccion de Asuntos Academicos.`,
               trigger: "4",
             },
             {
@@ -70,53 +71,112 @@ export default class Contenido extends Component {
                 "Lo siento si no puedo ser de ayuda para usted. hasta luego",
               end: true,
             },
+
             {
               id: "seleccion",
               options: [
                 { value: "f", label: "Matricula", trigger: "7A" },
                 { value: "b", label: "Forma de pago", trigger: "7B" },
-                { value: "g", label: "solicitar apertura de cursos", trigger: "7C" },
+                {
+                  value: "g",
+                  label: "solicitar apertura de cursos",
+                  trigger: "7C",
+                },
+                {
+                  value: "h",
+                  label: "¿Que hacer si soy un alumno nuevo?",
+                  trigger: "7D",
+                },
+                {
+                  value: "i",
+                  label: "¿Que hacer si soy un alumno ya registrado?",
+                  trigger: "7E",
+                },
               ],
             },
             {
               id: "7A",
               message:
-                "Tiene que ingresar al modulo de matricula en el siguiente enlace",
+                "Para la matricula tiene que ingresar al modulo de matricula en el siguiente enlace",
               trigger: "seleccionFront",
             },
             {
               id: "7B",
-              message:
-                `El pago lo realizas en banco de la nacion 
+              message: `El pago lo realizas en banco de la nacion 
                 y se recomienda realizar el pago en la sede central`,
               trigger: "pagarCodigo",
             },
             {
-              id:"pagarCodigo",
-              message:`
-              - Tiene que pagar al codigo 3910 con su codigo de estudiante
-              `,
-              trigger:"pagoMatricula",
+              id: "7D",
+              message: `El alumno nuevo tiene que asistir a la capacitacion de 
+              induccion de los ingresantes y ver este manual`,
+              trigger: "seleccionCapacitaIngresante",
             },
             {
-              id:"pagoMatricula",
-              message:`
+              id: "7E",
+              message: `Tiene que verificar los siguiente:
+              1.- Escala de pagos
+              2.- Revisar su plan de estudios
+              `,
+              trigger: "seleccionIRegistrado",
+            },
+            {
+              id: "seleccionCapacitaIngresante",
+              options: [
+                {
+                  value: "sobreManual",
+                  label: "ver manual",
+                  trigger: "capacitaIngresante",
+                },
+              ],
+            },
+            {
+              id: "seleccionIRegistrado",
+              options: [
+                {
+                  value: "sobrePlanEstudio",
+                  label: "ver plan de estudio",
+                  trigger: "ingresanteRegistrado",
+                },
+              ],
+            },
+            {
+              id: "ingresanteRegistrado",
+              component: <WikipediaSearch />,
+              asMessage: true,
+              trigger: "preguntaVuelta",
+            },
+            {
+              id: "capacitaIngresante",
+              component: <WikipediaSearch />,
+              asMessage: true,
+              trigger: "preguntaVuelta",
+            },
+            {
+              id: "pagarCodigo",
+              message: `
+              - Tiene que pagar al codigo 3910 con su codigo de estudiante
+              `,
+              trigger: "pagoMatricula",
+            },
+            {
+              id: "pagoMatricula",
+              message: `
               - Tienes problema con el pago de su matricula comunicarse 
                 al  WhatSapp 929103530/974229465 
               `,
-              trigger:"preguntaVuelta",
+              trigger: "preguntaVuelta",
             },
             {
               id: "7C",
-              message:
-                `Para aperturar cursos son los siguientes requisitos:
+              message: `Para aperturar cursos son los siguientes requisitos:
                 `,
               trigger: "MinimoEstudi",
             },
             {
-              id:"MinimoEstudi",
+              id: "MinimoEstudi",
               message: `1.- Minimo de estudiantes 7...`,
-              trigger:"seleccionAperturaCursos"
+              trigger: "seleccionAperturaCursos",
             },
             {
               id: "seleccionFront",
@@ -127,13 +187,16 @@ export default class Contenido extends Component {
                   trigger: "9",
                 },
                 { value: "ver Manual", label: "Ver manual", trigger: "9" },
-                { value: "Vue.js", label: "Vue.js", trigger: "9" },
               ],
             },
             {
-              id:"seleccionAperturaCursos",
-              options:[
-                {value:"sobreRequisitos", label:"ver mas sobre los requisitos" , trigger:"9"},
+              id: "seleccionAperturaCursos",
+              options: [
+                {
+                  value: "sobreRequisitos",
+                  label: "ver mas sobre los requisitos",
+                  trigger: "9",
+                },
               ],
             },
             {
