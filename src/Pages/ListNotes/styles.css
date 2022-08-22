@@ -62,11 +62,14 @@ Variables
     width: 90vw !important;
     margin: 0px auto !important;
     height: 100vh;
-  
+    overflow-y: scroll;
     border-radius: var(--radius) !important;
     padding: 1rem 2rem !important;
     max-width: var(--fixed-width) !important;
     /* background-color: yellowgreen; */
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .question {
     padding: 1rem 1.5rem !important;
